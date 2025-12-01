@@ -7,16 +7,33 @@
 html,body{
     height: 100%;
     width: 100%;
-    
+    background-image: url("https://imgs.search.brave.com/N77-ckeZwAUV8N7O3Xa9y9Ob9kKm2W_zGWI1jtEKpDU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2UwL2Y5/LzdlL2UwZjk3ZWUy/MWI5MThiOTdkY2Iw/ZTQyZWUzNDJhYTVm/LmpwZw")
+    ;  
+}
+:root{
+    --x:400px;
+    --y:400px;
 }
 #main{
     height: 100%;
     width: 100%;
-    background-image: url("https://imgs.search.brave.com/N77-ckeZwAUV8N7O3Xa9y9Ob9kKm2W_zGWI1jtEKpDU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2UwL2Y5/LzdlL2UwZjk3ZWUy/MWI5MThiOTdkY2Iw/ZTQyZWUzNDJhYTVm/LmpwZw");
+    background: radial-gradient(350px at var(--x) var(--y), rgba(241, 238, 238, 0.21),rgba(0, 0, 0, 0.913));
     display: flex;
     gap: 20px;
     padding: 20px;
     flex-wrap:wrap;
+    position: relative;
+}
+#main::before{
+    height: 100%;
+    width: 100%;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(150px at var(--x) var(--y), rgba(255, 255, 255, 0.205),rgba(0, 0, 0, 0.858));
+    z-index: 10;
+    pointer-events: none;
+    flex-wrap: wrap;
 }
 .card{
     height: 350px;
@@ -25,6 +42,7 @@ html,body{
     border-radius: 20px;
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 .card img{
     height: 100%;
